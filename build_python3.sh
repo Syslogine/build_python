@@ -1,26 +1,20 @@
 #!/bin/bash
-# Build Python3 for Ubuntu 18.04 - JetPack 4.X
+# Build Python3.12 for Ubuntu 18.04 - JetPack 4.X
 # Copyright (c) JetsonHacks 2023
-# Build Python 3.9, 3.10, 3.11, or 3.12 for JetPack 4.x (Jetson Linux - Ubuntu 18.04 - bionic )
 
-# Default version
-version="3.11"
+# Set the version
+version="3.12"
 
-help_message="Usage: $0 [-v|--version version_number] [-h|--help]
+help_message="Usage: $0 [-h|--help]
 Options:
-  -v, --version  Provide a version number (3.9, 3.10, 3.11, or 3.12).
   -h, --help     Show this help message."
 
 # Parse command-line options
-OPTIONS=$(getopt -o v:h --longoptions version:,help -- "$@")
+OPTIONS=$(getopt -o h --longoptions help -- "$@")
 eval set -- "$OPTIONS"
 
 while true; do
     case "$1" in
-        -v|--version)
-            version="$2"
-            shift 2
-            ;;
         -h|--help)
             echo "$help_message"
             exit 0
@@ -37,11 +31,6 @@ while true; do
     esac
 done
 
-# Validate the provided version number
-if [[ "$version" != "3.9" ]] && [[ "$version" != "3.10" ]] && [[ "$version" != "3.11" ]] && [[ "$version" != "3.12" ]]; then
-    echo "The version number $version is not supported. Please provide a correct version (3.9, 3.10, 3.11, or 3.12)."
-    exit 1
-fi
 echo "Building Python version: $version"
 
 sudo apt update
@@ -63,7 +52,7 @@ mkdir -p ~/Python-Builds
 cd ~/Python-Builds
 mkdir Python$version-Dist
 cd Python$version-Dist
-git clone https://github.com/JetsonHacksNano/python$version.git
+git clone https://github.com/syslogine/python$version.git
 cd python$version
 
 git checkout ubuntu/bionic
