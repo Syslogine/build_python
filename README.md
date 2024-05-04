@@ -5,6 +5,14 @@ The JetsonHacksNano repository holds Python 3.9, Python 3.10 and Python 3.11 sou
 
 When Ubuntu 18.04 (Bionic) reached EOL, the repository removed Python builds for that versions. Because the Jetsons using JetPack 4.X still use Ubuntu 18.04, we keep the more recent versions of Python (3.9, 3.10 ,3.11and 3.12) source code in the JetsonHacksNano account which include the Deadsnakes debian packaging scripts.
 
+```bash
+git clone https://github.com/Syslogine/build_python.git
+```
+
+```bash
+cd build_python
+```
+
 In order to build the .deb files for a Python release:
 ```bash
 ./build_python3.sh
