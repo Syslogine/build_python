@@ -1,9 +1,9 @@
 # build_python
-Create .deb files for later versions of Python (3.9,3.10,3.11) for Jetson Linux - Ubuntu 18.04 - bionic
+Create .deb files for later versions of Python (3.9,3.10,3.11,3.12) for Jetson Linux - Ubuntu 18.04 - bionic
 
 The JetsonHacksNano repository holds Python 3.9, Python 3.10 and Python 3.11 source code forked from the Deadsnakes account: https://github.com/deadsnakes Deadsnakes creates a repository to hold both new and old versions of Python for Ubuntu.
 
-When Ubuntu 18.04 (Bionic) reached EOL, the repository removed Python builds for that versions. Because the Jetsons using JetPack 4.X still use Ubuntu 18.04, we keep the more recent versions of Python (3.9, 3.10 and 3.11) source code in the JetsonHacksNano account which include the Deadsnakes debian packaging scripts.
+When Ubuntu 18.04 (Bionic) reached EOL, the repository removed Python builds for that versions. Because the Jetsons using JetPack 4.X still use Ubuntu 18.04, we keep the more recent versions of Python (3.9, 3.10 ,3.11and 3.12) source code in the JetsonHacksNano account which include the Deadsnakes debian packaging scripts.
 
 In order to build the .deb files for a Python release:
 ```
