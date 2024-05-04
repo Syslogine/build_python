@@ -1,14 +1,14 @@
 #!/bin/bash
 # Build Python3 for Ubuntu 18.04 - JetPack 4.X
 # Copyright (c) JetsonHacks 2023
-# Build Python 3.9, 3.10, or 3.11 for JetPack 4.x (Jetson Linux - Ubuntu 18.04 - bionic )
+# Build Python 3.9, 3.10, 3.11, or 3.12 for JetPack 4.x (Jetson Linux - Ubuntu 18.04 - bionic )
 
 # Default version
 version="3.11"
 
 help_message="Usage: $0 [-v|--version version_number] [-h|--help]
 Options:
-  -v, --version  Provide a version number (3.9, 3.10, or 3.11).
+  -v, --version  Provide a version number (3.9, 3.10, 3.11, or 3.12).
   -h, --help     Show this help message."
 
 # Parse command-line options
@@ -38,8 +38,8 @@ while true; do
 done
 
 # Validate the provided version number
-if [[ "$version" != "3.9" ]] && [[ "$version" != "3.10" ]] && [[ "$version" != "3.11" ]]; then
-    echo "The version number $version is not supported. Please provide a correct version (3.9, 3.10, or 3.11)."
+if [[ "$version" != "3.9" ]] && [[ "$version" != "3.10" ]] && [[ "$version" != "3.11" ]] && [[ "$version" != "3.12" ]]; then
+    echo "The version number $version is not supported. Please provide a correct version (3.9, 3.10, 3.11, or 3.12)."
     exit 1
 fi
 echo "Building Python version: $version"
